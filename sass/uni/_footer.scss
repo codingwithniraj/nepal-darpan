@@ -1,0 +1,95 @@
+.footer {
+    color: #fff;
+    background-color: $color-black;
+    background-image: linear-gradient(to right, rgba($color-black, 0.95) 45%, rgba($color-black, 0.5)), url('../images/sebastian-pena-lambarri-Wj9ELwGXa6c-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &-top {
+        padding: 10rem 0;
+        border-top: 1px solid #ccc;
+
+        &-col {
+            padding: 2rem;
+        }
+
+        h3 {
+            font-family: $font-title;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .list-content {
+            margin-bottom: 4rem;
+
+            li {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+
+                a {
+                    &:hover {
+                        color: $color-sub;
+                    }
+                }
+            }
+        }
+
+        .social-icon {
+            margin-right: 1rem;
+
+            a {
+                &:hover {
+                    color: $color-sub;
+                }
+            }
+        }
+    }
+
+    &-about {
+        padding-right: 4rem;
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    &-bot {
+        margin-top: 1rem;
+        padding: 2rem;
+        background-color: $color-black;
+        text-align: center;
+
+        span {
+            font-family: $font-title;
+            font-size: 1.4rem;
+
+            strong {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .tags {
+        span {
+            a {
+                color: #fff;
+                background-color: transparent;
+                border-color: #fff;
+
+                &:hover {
+                    background-color: $color-sub;
+                    border-color: $color-sub;
+                }
+            }
+        }
+    }
+
+    @include respond(tabland-min) {
+
+        &-top .container,
+        &-bot .container {
+            max-width: 1350px;
+        }
+    }
+}

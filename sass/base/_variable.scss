@@ -1,0 +1,104 @@
+$color-main: #001942;
+$color-sub: #dd3333;
+$color-blue:#1c75bb;
+
+$color-black: #222;
+$color-gray: #f8f8f8;
+
+$font-title: "Poppins",
+sans-serif;
+
+$font-common: "Rubik",
+sans-serif;
+
+$font-text: "Open Sans",
+sans-serif;
+
+$font-bold: "Bebas Neue",
+cursive;
+
+$font-fancy: "Kaushan Script",
+cursive;
+
+$font-awesome: "Font Awesome 5 Free";
+
+//mixin for responsive css
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==phone-min {
+    @media (min-width: 577px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==phone-tabport {
+    @media (min-width: 577px) and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabport {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabport-min {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabport-tabland {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabland {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabland-min {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==smdesktop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tabland-smdesktop {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==smdesktop-min {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==bgdesktop {
+    @media (max-width: 1601px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==bgdesktop-min {
+    @media (min-width: 1601px) {
+      @content;
+    }
+  }
+}

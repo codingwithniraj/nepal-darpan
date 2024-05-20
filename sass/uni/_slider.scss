@@ -1,0 +1,304 @@
+.section-slider {
+    padding-top: 0;
+
+    @include respond(tabland-min) {}
+
+    @include respond(tabland) {}
+}
+
+#carousel1 {
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 25%;
+    //     background-image: url('../images/snow-bg.png');
+    //     background-size: 100% 100%;
+    // }
+
+    .carousel-item {
+        height: 70rem;
+
+        .imgtobg-o,
+        .imgtobg-o-sm {
+            position: relative;
+            animation: carouimgzoom 60s infinite;
+        }
+    }
+
+    @include respond(tabland) {
+        // &::after {
+        //     height: 20%;
+        // }
+    }
+
+    @include respond(phone) {
+        .carousel-item {
+            height: 40rem;
+            min-height: 1px;
+        }
+    }
+
+}
+
+.carousel {
+    &-overlay {
+        position: relative;
+        width: 100%;
+        max-width: 85rem;
+
+        // &::after {
+        //     z-index: 1;
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 100%;
+        //     right: 0rem;
+        //     background-image: url('../images/nocalloutfee.png');
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     width: 12rem;
+        //     height: 12rem;
+        // }
+
+        &-wrapper {
+            color: #fff;
+            z-index: 3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            &::before {
+                z-index: 0;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(#000, 0.2);
+            }
+
+            &::after {
+                z-index: 1;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 25%;
+                background-image: url('../images/snow-bg.png');
+                background-size: 100% 100%;
+            }
+
+            >.container {
+                z-index: 2;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+        }
+
+        &-wrapper.text-center & {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-wrapper.text-right & {
+            position: absolute;
+            right: 0;
+        }
+
+        &-inner {
+            padding: 0 7rem;
+            @include unselect;
+
+            h2,
+            h3 {
+                font-family: $font-title;
+                font-size: 5rem;
+                font-weight: 800;
+                display: inline-block;
+                margin: 0 0 3rem;
+                text-transform: capitalize;
+                text-shadow: 0 0 3px rgba(#000, 0.3);
+            }
+
+            h5 {
+                font-family: $font-text;
+                font-size: 2rem;
+                font-weight: 500;
+                display: inline-block;
+                margin-bottom: 2rem;
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 6rem;
+                    height: 2px;
+                    display: inline-block;
+                    background-color: $color-main;
+                    vertical-align: middle;
+                }
+
+                &::before {
+                    margin-right: 1rem;
+                }
+
+                &::after {
+                    margin-left: 1rem;
+                }
+
+                img {
+                    width: 2.25rem;
+                }
+            }
+
+            p {
+                font-family: $font-common;
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            a {
+                margin-right: 2rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    &-indicators {
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 0;
+        bottom: 3rem;
+        left: 50%;
+        right: auto;
+        text-align: center;
+        transform: translateX(-50%);
+
+        li {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0;
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin: 0 .75rem;
+            transition: all .3s ease;
+
+            &.active {
+                width: 3rem;
+                background-color: #fff;
+            }
+        }
+    }
+
+    &-control {
+
+        &-prev,
+        &-next {
+            width: 4.5rem;
+            height: 10rem;
+            opacity: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            background-color: rgba(#000, 0.4);
+
+            &:hover {
+                width: 8rem;
+                background-color: rgba(#000, 0.75);
+            }
+
+            i {
+                font-size: 2.5rem;
+            }
+        }
+
+        &-prev {
+            left: -15rem;
+        }
+
+        &-next {
+            right: -15rem;
+        }
+    }
+
+    &:hover &-control-prev {
+        left: 0;
+    }
+
+    &:hover &-control-next {
+        right: 0;
+    }
+
+    // @include respond(tabland-min) {
+    //     &-overlay-inner {
+    //         margin-top: 15rem;
+    //     }
+    // }
+
+    @include respond(tabland) {
+        &-overlay {
+            &::after {
+                top: 0;
+                bottom: auto;
+                width: 7rem;
+                height: 7rem;
+            }
+
+            &-wrapper {
+                &::after {
+                    height: 20%;
+                }
+            }
+        }
+
+        &-overlay-inner {
+
+            h2,
+            h3 {
+                font-size: 3.2rem;
+            }
+
+            p {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    @include respond(phone) {
+        .carousel-overlay-inner {
+            padding: 5rem 3rem;
+
+            h2,
+            h3 {
+                font-size: 2.75rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+
+            a {
+                margin-top: 1.2rem;
+            }
+        }
+
+        &-control-prev,
+        &-control-next {
+            display: none;
+        }
+    }
+}

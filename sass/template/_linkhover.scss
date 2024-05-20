@@ -1,0 +1,72 @@
+.link-style-passby {
+    font-family: $font-title;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 1.25rem;
+    min-width: 16rem;
+    border-width: 2px;
+    // min-height: 4rem;
+    // line-height: 4rem;
+    text-align: center;
+    color: #fff;
+    border: 2px solid $color-main;
+    border-radius: 25px;
+    background-color: $color-main;
+    overflow: hidden;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+
+    span {
+        z-index: 1;
+        position: relative;
+    }
+
+    &::after {
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        left: auto;
+        right: 0;
+        background-color: #fff;
+        border-radius: 0px;
+        -webkit-transition: width .6s cubic-bezier(.25, .8, .25, 1) 0s;
+        transition: width .6s cubic-bezier(.25, .8, .25, 1) 0s;
+    }
+
+    &:hover {
+        color: $color-main;
+        background-color: transparent;
+
+        &::after {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+    }
+
+    &-alt {
+        color: #fff;
+        background-color: $color-sub;
+        border-color: $color-sub;
+        overflow: hidden;
+
+        &:hover {
+            color: $color-sub;
+        }
+
+        &::after {
+            background-color: #fff;
+            border-radius: 0px;
+        }
+    }
+}

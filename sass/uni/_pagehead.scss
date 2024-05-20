@@ -1,0 +1,103 @@
+.pageheader,
+.page-banner {
+  color: #fff;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 32rem;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0);
+  }
+
+  &-cover {
+    position: relative;
+    width: 100%;
+    background-image: url("../images/1994698.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &-bg {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .container {
+    z-index: 1;
+  }
+  &-text * {
+    text-shadow: 1px 1px 6px #000;
+  }
+
+  &-title {
+    color: #fff;
+    font-family: $font-fancy;
+    font-size: 7rem;
+    // font-weight: 700;
+    margin-bottom: 5rem;
+  }
+
+  &-quote {
+    p {
+      font-family: $font-bold;
+      font-size: 2.75rem;
+      text-transform: uppercase;
+    }
+  }
+
+  @include respond(tabland-min) {
+    &__wrap {
+    }
+  }
+
+  @include respond(tabland) {
+    &-title h1 {
+      font-size: 6rem;
+    }
+  }
+
+  @include respond(phone) {
+    min-height: 22rem;
+
+    &-title h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+.page-banner {
+  height: 50rem;
+  min-height: 50vh;
+}
+
+.page {
+  &-gallery .pageheader-bg .imgtobg-o {
+    background-position: 50% 80%;
+  }
+
+  &-tour-list .pageheader-bg .imgtobg-o {
+    background-position: 50% 20%;
+  }
+
+  &-itenary .pageheader-bg .imgtobg-o {
+    background-position: 50% 40%;
+  }
+}
